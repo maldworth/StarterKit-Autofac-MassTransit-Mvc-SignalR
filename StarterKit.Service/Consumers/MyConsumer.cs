@@ -7,10 +7,9 @@
 
     public class MyConsumer : IConsumer<MyMessage>
     {
-        public Task Consume(ConsumeContext<MyMessage> context)
+        public async Task Consume(ConsumeContext<MyMessage> context)
         {
             Console.Out.WriteLine("Received Message: " + context.Message.Message);
-            return Task.FromResult(0);
         }
     }
 }

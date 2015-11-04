@@ -32,7 +32,7 @@
                     h.Password(ConfigurationManager.AppSettings["RabbitMQPassword"]);
                 });
 
-                sbc.ReceiveEndpoint(host, "my_messages", e =>
+                sbc.ReceiveEndpoint(host, ConfigurationManager.AppSettings["MyMessageQueueName"], e =>
                 {
                     // Configure your consumer(s)
                     e.PrefetchCount = 4;
